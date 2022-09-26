@@ -49,6 +49,6 @@ public class ServletCalculator extends HttpServlet {
         Map<String, Double > resultOut = new HashMap<>();
         resultOut.put("result", result);
         PrintWriter pw = response.getWriter();
-        pw.print(gson.toJson(result));
+        pw.print(gson.toJson(resultOut));
     }
 }
