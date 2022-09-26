@@ -11,6 +11,8 @@ import ru.appline.logic.User;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet(urlPatterns = "/calculate")
 public class ServletCalculator extends HttpServlet {
@@ -44,6 +46,8 @@ public class ServletCalculator extends HttpServlet {
             result = first_number/second_number;
         }
         response.setContentType("application/json;charset=utf-8");
+        Map<String, Double > resultOut = new HashMap<>();
+        resultOut.put("result", result);
         PrintWriter pw = response.getWriter();
         pw.print(gson.toJson(result));
     }
